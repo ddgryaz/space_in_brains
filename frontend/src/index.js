@@ -1,17 +1,17 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import UserStore from "./store/UserStore";
+import BrainStore from "./store/BrainStore";
+
+export const Context = createContext(null)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Context.Provider value={{
+        user: new UserStore(),
+        brain: new BrainStore()
+    }}>
+        <App />
+    </Context.Provider>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
