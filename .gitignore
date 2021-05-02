@@ -3,3 +3,4 @@ backend/node_modules
 /backend/static/*.jpg
 !/backend/static/default_avatar.jpg
 /backend/.env
+/frontend/node_modules
