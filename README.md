@@ -11,7 +11,9 @@
 ## Space in Brains
 ### Стек и инструменты:
 * NodeJS
+  * ORM Sequelize
 * ReactJS
+  * Bootstrap Framework
 * Python
 * PostgreSQL
 * Insomnia 

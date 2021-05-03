@@ -1,6 +1,6 @@
 import Admin from "./pages/Admin";
 import {
-    ADMIN_ROUTE,
+    ADMIN_ROUTE, ALL_BRAINS_ROUTE,
     BRAIN_ROUTE,
     LOGIN_ROUTE,
     PORTAL_ROUTE,
@@ -13,11 +13,17 @@ import Portal from "./pages/Portal";
 import BrainPage from "./pages/BrainPage";
 import Main from "./pages/main/Main";
 import Profile from "./pages/Profile";
+import AllBrains from "./pages/AllBrains";
+
 
 export const authRouters = [
     {
         path: ADMIN_ROUTE,
         Component: Admin
+    },
+    {
+        path: ALL_BRAINS_ROUTE,
+        Component: AllBrains
     },
     {
         path: PORTAL_ROUTE,

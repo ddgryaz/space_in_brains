@@ -6,8 +6,6 @@ import {Context} from "../index";
 
 const AppRouter = () => {
     const {user} = useContext(Context)
-    const isAuth = false
-    console.log(user)
     return (
         <Switch>
             {user.isAuth && authRouters.map(({path, Component}) =>
