@@ -17,11 +17,10 @@ const Auth = observer(() => {
 
     const click = async () => {
         try {
-            let data
             if (isLogin) {
-               data = await loging(login, password)
+               await loging(login, password)
             } else {
-               data = await registration(login, password)
+               await registration(login, password)
             }
             user.setUser(user)
             user.setIsAuth(true)
