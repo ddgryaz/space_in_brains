@@ -10,10 +10,16 @@
 
 ## Space in Brains
 ### Стек и инструменты:
+![PERN](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200402205611/What-is-PERN-Stack.png)
 * NodeJS
-  * ORM Sequelize
+  * Express
 * ReactJS
+  * MobX
   * Bootstrap Framework
 * Python
 * PostgreSQL
-* Insomnia 
+  * ORM Sequelize
+* Insomnia
+    - ( Для тестирования REST API )
+### Описание:
+Space in Brains представляет собой некий блокнот. Ваш персональный помощник, который позволяет вам отслеживать технологии и инструменты, которые вы еще не освоили. Почему это важно? Даже опытные инженеры имеют много пробелов в знаниях. Благодаря Space in Brains вы можете отследить свои пробелы. Таким образом вы мотивируете себя и окружающих! Каждая технология или инструмент в нашей системе называется - Брейн. Welcome! My dear friend!
