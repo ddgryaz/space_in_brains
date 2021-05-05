@@ -7,20 +7,17 @@ import {createBrain} from "../../http/brainAPI";
 const CreateBrain = observer(({show, onHide}) => {
     const {brain} = useContext(Context)
     const [name, setName] = useState('')
+    const [description, setDescription] = useState('')
     const [file, setFile] = useState(null)
-    const [info, setInfo] = useState([])
-    const addInfo = () => {
-        setInfo([...info, {title: '', description: '', number: Date.now()}])
-    }
-    const removeInfo = (number) => {
-        setInfo(info.filter(i => i.number !== number))
-    }
+
+
     const selectFile = e => {
         setFile(e.target.files[0])
     }
     const addBrain = () => {
         const formData = new FormData()
         formData.append('name', name)
+        formData.append('description', description)
         formData.append('img', file)
         createBrain(formData).then(data => onHide())
     }
@@ -44,24 +41,14 @@ const CreateBrain = observer(({show, onHide}) => {
                         placeholder={"Введите название Брейна"}
                     />
                     <Form.Control className="mt-3"
+                                  value={description}
+                                  onChange={e => setDescription(e.target.value)}
+                                  placeholder={"Введите описание Брейна"}
+                    />
+                    <Form.Control className="mt-3"
                         type="file"
                         onChange={selectFile}
                     />
-                    <hr/>
-                    <Button variant={'outline-dark'} onClick={addInfo}>Добавить описание</Button>
-                    {info.map(i =>
-                        <Row className="mt-3" key={i.number}>
-                            <Col md={4}>
-                                <Form.Control/>
-                            </Col>
-                            <Col md={4}>
-                                <Form.Control placeholder="Введите описание"/>
-                            </Col>
-                            <Col md={4}>
-                                <Button variant={"outline-danger"} onClick={() => removeInfo(i.number)}>Удалить</Button>
-                            </Col>
-                        </Row>
-                    )}
                 </Form>
             </Modal.Body>
             <Modal.Footer>

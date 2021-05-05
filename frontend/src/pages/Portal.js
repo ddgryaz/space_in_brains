@@ -1,7 +1,6 @@
 import React from 'react';
 import {Col, Row} from "react-bootstrap";
 import Navigation from "../components/Navigation";
-import BrainsList from "../components/BrainsList";
 
 const Portal = () => {
     return (

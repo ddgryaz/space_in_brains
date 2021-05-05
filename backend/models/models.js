@@ -14,13 +14,9 @@ const Brain = sequelize.define('brain', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true},
     img: {type: DataTypes.STRING, allowNull: false},
+    description: {type: DataTypes.TEXT, defaultValue: 'Упс, администратор еще не заполнил описание Брейна.'},
 })
 
-const Brain_info = sequelize.define('brain_info', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    title: {type: DataTypes.STRING, allowNull: false},
-    description: {type: DataTypes.STRING, allowNull: false},
-})
 
 const Comment = sequelize.define('comment', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -37,13 +33,10 @@ Brain.belongsToMany(User, {through: UserBrain})
 User.hasMany(Comment)
 Comment.belongsTo(User)
 
-Brain.hasMany(Brain_info, {as: 'info'})
-Brain_info.belongsTo(Brain)
 
 module.exports = {
     User,
     Brain,
-    Brain_info,
     Comment,
     UserBrain
 }
