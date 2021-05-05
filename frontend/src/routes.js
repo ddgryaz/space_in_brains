@@ -18,10 +18,6 @@ import AllBrains from "./pages/AllBrains";
 
 export const authRouters = [
     {
-        path: ADMIN_ROUTE,
-        Component: Admin
-    },
-    {
         path: ALL_BRAINS_ROUTE,
         Component: AllBrains
     },
@@ -56,4 +52,11 @@ export const publicRouters = [
         path: REGISTRATION_ROUTE,
         Component: Auth
     },
+]
+
+export const adminRoutes = [
+    {
+        path: ADMIN_ROUTE,
+        Component: Admin
+    }
 ]
