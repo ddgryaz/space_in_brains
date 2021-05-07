@@ -1,6 +1,8 @@
 import React from 'react';
 import {Col, Row} from "react-bootstrap";
 import Navigation from "../components/Navigation";
+import CommentItem from "../components/CommentItem";
+import CommentList from "../components/CommentList";
 
 const Portal = () => {
     return (
@@ -9,7 +11,7 @@ const Portal = () => {
                 <Navigation />
             </Col>
             <Col md={9}>
-                <div style={{color: 'white'}}>PORTAL</div>
+                <CommentList/>
             </Col>
         </Row>
     );
