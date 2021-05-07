@@ -9,14 +9,14 @@ const CommentItem = ({comment}) => {
             width: 300,
             height: 100,
             borderRadius: '10px 10px 10px 10px',
-            marginTop: '1%'
+            margin: '1%'
 
         }}>
             <div style={{color: 'orangered', paddingLeft: 10, paddingTop: 5}}>
-                {comment.userId}
+                Пользователь: <span style={{color: '#7f3d19', fontWeight: "bold"}}>{comment.user.login}</span>
             </div>
             <div style={{color: 'white', paddingLeft: 10, paddingTop: 5, fontSize: 14, width: 290, height: 70, borderTop: '1px dotted black'}}>
-                {comment.comment}
+                Добавил в коллекцию Брейн - <span style={{fontSize: 16, color: '#c70505'}}>{comment.comment}</span>
             </div>
         </div>
     );

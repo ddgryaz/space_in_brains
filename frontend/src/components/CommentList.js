@@ -9,7 +9,7 @@ const CommentList = observer(() => {
     return (
         <Row className="d-flex">
             {comment.comments.map(comment =>
-                <CommentItem key={comment.id} brain={comment}/>
+                <CommentItem key={comment.id} comment={comment}/>
             )}
         </Row>
     );
