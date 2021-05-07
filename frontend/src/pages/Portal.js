@@ -3,7 +3,6 @@ import {Col, Row} from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import CommentList from "../components/CommentList";
 import {Context} from "../index";
-import {getBrains} from "../http/brainAPI";
 import {getAllComment} from "../http/commentAPI";
 
 const Portal = () => {
@@ -18,7 +17,7 @@ const Portal = () => {
                 <Navigation />
             </Col>
             <Col md={9}>
-                <CommentList/>
+                <div style={{overflowY: 'auto', overflowX: 'hidden', height: '85vh'}}><CommentList/></div>
             </Col>
         </Row>
     );
