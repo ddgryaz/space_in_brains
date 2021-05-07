@@ -1,5 +1,5 @@
 const Router = require('express')
-const router = new Router
+const router = new Router()
 const commentRouter = require('./commentRouter')
 const userRouter = require('./userRouter')
 const brainRouter = require('./brainRouter')

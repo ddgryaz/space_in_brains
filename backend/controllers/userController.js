@@ -4,16 +4,16 @@ const jwt = require('jsonwebtoken')
 const {User} = require('../models/models')
 
 
-const generateJwt = (id, login, role) => {
-    return jwt.sign({id, login, role},
+const generateJwt = (id, login, role, img) => {
+    return jwt.sign({id, login, role, img},
         process.env.SECRET_KEY,
-        {expiresIn: '24h'})
+        {expiresIn: 3600})
 }
 
 
 class UserController {
     async registration(req, res, next) {
-        const {login, password, role} = req.body
+        const {login, password, role, img} = req.body
         if (!login || !password) {
             return next(ApiError.badRequest('Некорректный login или password'))
         }
@@ -22,8 +22,8 @@ class UserController {
             return next(ApiError.badRequest('Пользователь с таким login уже существует'))
         }
         const hashPassword = await bcrypt.hash(password, 5)
-        const user = await User.create({login, role, password: hashPassword, })
-        const token = generateJwt(user.id, user.login, user.role)
+        const user = await User.create({login, role, password: hashPassword, img})
+        const token = generateJwt(user.id, user.login, user.role, user.img)
         return res.json({token})
     }
 
@@ -37,14 +37,15 @@ class UserController {
         if (!comparePassword) {
             return next(ApiError.badRequest('Указан неверный пароль'))
         }
-        const token = generateJwt(user.id, user.login, user.role)
+        const token = generateJwt(user.id, user.login, user.role, user.img)
         return res.json({token})
     }
 
     async checkAuth(req, res, next) {
-        const token = generateJwt(req.user.id, req.user.login, req.user.role)
+        const token = generateJwt(req.user.id, req.user.login, req.user.role, req.user.img)
         return res.json({token})
     }
+
 }
 
 module.exports = new UserController()
