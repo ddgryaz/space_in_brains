@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.request import *
 import time
+import os.path
 
 
 def get_html(url):
@@ -41,6 +42,20 @@ def get_data(html):
                 print('Bad IMG download ok')
             else:
                 print('No Img ;(')
+        url = 'http://localhost:8794/api/brain'
+        headers = {
+            'Authorization': 'Bearer TOKEN_HERE'  # TOKEEEEEEEEN HEREEEEEEEEE!!!
+        }
+        print(os.path.exists(name + '.jpg'))
+        if not os.path.exists(name + '.jpg'):
+            data = {'name': (None, name), 'description': (None, 'Упс, администратор еще не заполнил описание Брейна.'),
+                    'img': open('default.png', 'rb')}
+        else:
+            data = {'name': (None, name), 'description': (None, 'Упс, администратор еще не заполнил описание Брейна.'),
+                    'img': open(name + '.jpg', 'rb')}
+
+        r = requests.post(url, headers=headers, files=data)
+        print(r.text)
 
 
 def main():

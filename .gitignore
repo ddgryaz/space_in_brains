@@ -8,5 +8,4 @@ backend/node_modules
 /todo.js
 /pythonForDeploy/.idea
 /pythonForDeploy/venv
-/pythonForDeploy/logs.log
-/pythonForDeploy/imgBrains
+/pythonForDeploy/*.jpg
