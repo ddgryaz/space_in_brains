@@ -9,8 +9,9 @@ const CommentItem = ({comment}) => {
             width: 300,
             height: 100,
             borderRadius: '10px 10px 10px 10px',
-            margin: '1.1%',
-            boxShadow: '12px 12px 2px 1px rgba(212, 190, 8, .4'
+            marginLeft: '2%',
+            marginTop: '2%',
+            boxShadow: '12px 12px 2px 1px rgba(212, 190, 8, .4)'
 
         }}>
             <div style={{color: 'orangered', paddingLeft: 10, paddingTop: 5}}>
