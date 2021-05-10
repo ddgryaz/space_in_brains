@@ -6,3 +6,6 @@ backend/node_modules
 /frontend/node_modules
 /frontend/.env
 /todo.js
+/pythonForDeploy/.idea
+/pythonForDeploy/venv
+/pythonForDeploy/*.jpg
