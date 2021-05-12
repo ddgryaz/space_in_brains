@@ -3,7 +3,7 @@ import React from 'react';
 const CommentItem = ({comment}) => {
     let formatter = new Intl.DateTimeFormat("ru", {
         year: "numeric",
-        month: "short",
+        month: "2-digit",
         day: "2-digit",
         hour: 'numeric',
         minute: 'numeric'
@@ -14,7 +14,7 @@ const CommentItem = ({comment}) => {
             flexDirection: "column",
             backgroundColor: 'darkgrey',
             width: 300,
-            height: 100,
+            height: 150,
             borderRadius: '10px 10px 10px 10px',
             marginLeft: '2%',
             marginTop: '2%',
@@ -27,8 +27,8 @@ const CommentItem = ({comment}) => {
             <div style={{color: 'white', paddingLeft: 10, paddingTop: 5, fontSize: 14, width: 290, height: 70, borderTop: '1px dotted black'}}>
                 Добавил в коллекцию Брейн - <span style={{fontSize: 16, color: '#c70505'}}>{comment.comment}</span>
             </div>
-            <div>
-                {formatter.format(Date.parse(comment.createdAt))}
+            <div style={{padding: '10px'}}>
+                &#8986; {formatter.format(Date.parse(comment.createdAt))}
             </div>
         </div>
     );
