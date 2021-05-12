@@ -7,8 +7,7 @@ const Admin = () => {
     return (
         <Container className="d-flex flex-column">
             <Button variant={"success"} className='mt-2' onClick={() => setBrainVisible(true)}>Добавить Брейн</Button>
-            <Button variant={"success"} className='mt-2'>Добавить Пользователя</Button>
-            <Button variant={"success"} className='mt-2'>Добавить Администратора</Button>
+            <Button variant={"success"} className='mt-2'>Добавить Пользователя || Администратора</Button>
             <CreateBrain show={brainVisible} onHide={() => setBrainVisible(false)}/>
         </Container>
     );
