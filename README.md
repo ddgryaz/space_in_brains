@@ -17,6 +17,8 @@
   * MobX
   * Bootstrap Framework
 * Python
+  * Парсинг данных
+  * Автоматизация заполнения базы данных
 * PostgreSQL
   * ORM Sequelize
 * Insomnia
