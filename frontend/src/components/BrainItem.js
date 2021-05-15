@@ -11,7 +11,7 @@ const BrainItem = ({brain}) => {
             <Card style={{width: 150, cursor: 'pointer'}} border={"danger"}>
                 <Image width={148} height={150} src={process.env.REACT_APP_API_URL + brain.img}/>
                 <div>
-                    <div style={{paddingLeft: 5}}>
+                    <div style={{padding: 7, height: 45, fontSize: 13}}>
                         {brain.name}
                     </div>
                 </div>

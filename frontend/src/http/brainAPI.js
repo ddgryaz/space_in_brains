@@ -5,8 +5,8 @@ export const createBrain = async (brain) => {
     return data
 }
 
-export const getBrains = async () => {
-    const {data} = await $host.get('api/brain')
+export const getBrains = async (page, limit = 5) => {
+    const {data} = await $host.get('api/brain', {params: {page, limit}})
     return data
 }
 
