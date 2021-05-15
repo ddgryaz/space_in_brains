@@ -11,7 +11,7 @@ const Pages = observer(() => {
         pages.push(i + 1)
     }
     return (
-        <Pagination size="sm" className="mt-3">
+        <Pagination size="sm" className="mt-4">
             {pages.map(page =>
                 <Pagination.Item
                     key = {page}
