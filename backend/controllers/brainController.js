@@ -26,7 +26,11 @@ class BrainController {
     }
 
     async getAll(req, res) {
-        const brain = await Brain.findAll()
+        let {limit, page} = req.query
+        page = page || 1
+        limit = limit || 12
+        let offset = page * limit - limit
+        const brain = await Brain.findAndCountAll({limit, offset})
         return res.json(brain)
 
     }
