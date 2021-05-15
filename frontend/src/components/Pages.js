@@ -1,27 +1,23 @@
 import React, {useContext} from 'react';
 import {observer} from "mobx-react-lite";
 import {Context} from "../index";
-import {Pagination} from "react-bootstrap";
+import Pagination from '@material-ui/lab/Pagination';
 
 const Pages = observer(() => {
     const {brain} = useContext(Context)
     const pageCount = Math.ceil(brain.totalCount / brain.limit)
-    const pages = []
-    for (let i = 0; i < pageCount; i++) {
-        pages.push(i + 1)
-    }
+    const handleChange = (event, value) => {
+        brain.setPage(value);
+    };
     return (
-        <Pagination size="sm" className="mt-4">
-            {pages.map(page =>
-                <Pagination.Item
-                    key = {page}
-                    active={brain.page === page}
-                    onClick={() => brain.setPage(page)}
-                >
-                    {page}
-                </Pagination.Item>
-            )}
-        </Pagination>
+        <div style={{marginTop: '25px'}}>
+            <Pagination style={{backgroundColor: "lightgray", width: "400px", borderRadius: "10px"}}
+            count={pageCount}
+            color="primary"
+            page={brain.page}
+            onChange={handleChange}
+            />
+        </div>
     );
 });
 

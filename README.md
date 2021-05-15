@@ -16,6 +16,7 @@
 * ReactJS
   * MobX
   * Bootstrap Framework
+  * Material-UI
 * Python
   * Парсинг данных
   * Автоматизация заполнения базы данных
