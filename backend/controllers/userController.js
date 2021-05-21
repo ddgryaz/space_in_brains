@@ -1,3 +1,6 @@
+const path = require('path')
+const uuid = require('uuid')
+
 const ApiError = require('../error/ApiError')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
@@ -44,6 +47,23 @@ class UserController {
     async checkAuth(req, res, next) {
         const token = generateJwt(req.user.id, req.user.login, req.user.role, req.user.img)
         return res.json({token})
+    }
+
+    async changeAvatar(req, res, next) {
+        try {
+            const {userId} = req.body
+            const {img} = req.files
+            let fileName = uuid.v4() + ".jpg"
+            await img.mv(path.resolve(__dirname, '..', 'static', fileName))
+            const newAvatar = await User.update(
+                {img: fileName},
+                {returning: true, where: {id: userId}}
+            )
+            return res.json(newAvatar)
+        } catch (e) {
+            next(ApiError.badRequest(e.message))
+        }
+
     }
 
 }
