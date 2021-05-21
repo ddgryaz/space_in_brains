@@ -1,6 +1,7 @@
 const sequelize = require('../db')
 const {DataTypes} = require('sequelize')
 
+
 const User = sequelize.define('user', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     login: {type: DataTypes.STRING, unique: true},
@@ -25,10 +26,12 @@ const Comment = sequelize.define('comment', {
 
 const UserBrain = sequelize.define('user_brain', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    userId: {type: DataTypes.INTEGER, references: {model: User, key: 'id'}},
+    brainId: {type: DataTypes.INTEGER, references: {model: Brain, key: 'id'}}
 })
 
-User.belongsToMany(Brain, {through: UserBrain})
-Brain.belongsToMany(User, {through: UserBrain})
+User.belongsToMany(Brain, {through: UserBrain, as: 'brain'})
+Brain.belongsToMany(User, {through: UserBrain, as: 'user'})
 
 User.hasMany(Comment)
 Comment.belongsTo(User)
