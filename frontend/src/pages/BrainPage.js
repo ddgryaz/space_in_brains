@@ -21,8 +21,8 @@ const BrainPage = () => {
         try {
             const textComment = brain.name
             const userId = userInfo.id
-            await createComment(userId, textComment).then()
-            await createUserBrain(userId, brain.id).then(r => alert('Брейн добавлен!'))
+            await createUserBrain(userId, brain.id).then()
+            await createComment(userId, textComment).then(r => alert('Брейн добавлен!'))
         } catch (e) {
             alert('Брейн уже есть в вашей коллекции! ')
         }
