@@ -77,8 +77,10 @@ const Profile = observer(() => {
                     <div className="title" style={{display: "flex", justifyContent: "center", marginTop: '1%'}}><h2>Моя коллекция:</h2></div>
                     <div className="bottom" style={{display: "flex", flexDirection: "row", justifyContent: "center", height: '60vh'}}>
                         <div className="mybrains" style={{
+                            overflowY: 'auto', overflowX: 'hidden',
                             borderRadius: '.25rem',
                             width: '70vw',
+                            height: '25vh',
                             boxShadow: '0 0 10px rgb(255, 255, 255)',
                             margin: '2%',
                             border: '1px solid black',
