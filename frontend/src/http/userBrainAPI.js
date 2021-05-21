@@ -1,7 +1,7 @@
 import {$authHost} from "./index";
 
 export const getOneUserBrains = async (id) => {
-    const {data} = await $authHost.get('api/userBrain', {params: {id}})
+    const {data} = await $authHost.get('api/userBrain/' + id)
     return data
 }
 

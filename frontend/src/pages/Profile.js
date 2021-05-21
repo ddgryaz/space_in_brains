@@ -3,16 +3,17 @@ import {Button, Col, Image, Row, Table} from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import {observer} from "mobx-react-lite";
 import jwt_decode from "jwt-decode";
-import {Context} from "../index";
+import MyBrainsList from "../components/MyBrainsList";
 import {getOneUserBrains} from "../http/userBrainAPI";
+import {Context} from "../index";
 
 const Profile = observer(() => {
+    const {brain} = useContext(Context)
     const userToken = localStorage.getItem('token')
     let userInfo;
     if (userToken) {
         userInfo = jwt_decode(userToken)
     }
-    const {brain} = useContext(Context)
     useEffect(() => {
         getOneUserBrains(userInfo.id).then(data => brain.setBrains(data))
     }, [])
@@ -83,6 +84,7 @@ const Profile = observer(() => {
                             border: '1px solid black',
                             display: "flex",
                         }}>
+                            <MyBrainsList/>
                         </div>
                     </div>
                 </div>

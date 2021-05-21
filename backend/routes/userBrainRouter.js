@@ -4,6 +4,6 @@ const AuthMiddleWare = require('../middleware/AuthMiddleware')
 const userBrainController = require('../controllers/userBrainController')
 
 router.post('/', AuthMiddleWare, userBrainController.create)
-router.get('/', AuthMiddleWare, userBrainController.getOneUserBrains)
+router.get('/:id', AuthMiddleWare, userBrainController.getOneUserBrains)
 
 module.exports = router
