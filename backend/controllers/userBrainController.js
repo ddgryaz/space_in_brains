@@ -15,14 +15,16 @@ class userBrainController {
 
     async getOneUserBrains(req, res, next) {
         try {
-            const {userId} = req.body
-            const userBrain = await UserBrain.findAll(
+            const {id} = req.body
+            const userBrain = await User.findAll(
                 {
-                    where: {userId},
+                    where: {id},
+                    include: [{
+                        model: Brain,
+                        as: 'brain'
+                    }]
 
                 },
-
-
             )
             return res.json(userBrain)
         } catch (e) {
