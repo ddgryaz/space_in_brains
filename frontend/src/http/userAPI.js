@@ -18,3 +18,8 @@ export const check = async () => {
     localStorage.setItem('token', data.token)
     return jwt_decode(data.token)
 }
+
+export const changeAvaatar = async (avatar) => {
+    const {data} = await $authHost.put('api/user/changeAvatar', avatar)
+    return data
+}
