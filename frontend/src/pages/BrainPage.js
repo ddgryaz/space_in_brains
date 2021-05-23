@@ -17,11 +17,15 @@ const BrainPage = () => {
     if (userToken) {
         userInfo = jwt_decode(userToken)
     }
-    const addBrain = () => {
-        const textComment = brain.name
-        const userId = userInfo.id
-        createComment(userId, textComment)
-        createUserBrain(userId, brain.id).then(r => alert('Брейн добавлен!'))
+    const addBrain = async () => {
+        try {
+            const textComment = brain.name
+            const userId = userInfo.id
+            await createUserBrain(userId, brain.id).then()
+            await createComment(userId, textComment).then(r => alert('Брейн добавлен!'))
+        } catch (e) {
+            alert('Брейн уже есть в вашей коллекции! ')
+        }
     }
 
     useEffect(() => {
