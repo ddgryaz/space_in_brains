@@ -1,11 +1,9 @@
-import React, {useContext, useState} from 'react';
-import {Button, Col, Form, Modal, Row} from "react-bootstrap";
-import {Context} from "../../index";
+import React, {useState} from 'react';
+import {Button, Form, Modal,} from "react-bootstrap";
 import {observer} from "mobx-react-lite";
 import {createBrain} from "../../http/brainAPI";
 
 const CreateBrain = observer(({show, onHide}) => {
-    const {brain} = useContext(Context)
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [file, setFile] = useState(null)

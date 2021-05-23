@@ -1,5 +1,5 @@
 import React, {useContext, useEffect} from 'react';
-import {Col, Container, Row} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import BrainsList from "../components/BrainsList";
 import {Context} from "../index";

@@ -31,7 +31,6 @@ const BrainPage = () => {
     useEffect(() => {
         getOneBrain(id).then(data => setBrain(data))
     }, [])
-    console.log(brain)
     return (
         <Row className="mt-2">
             <Col md={3} className="mt-3">

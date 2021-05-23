@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {Button, Col, Image, Row, Table} from "react-bootstrap";
+import {Button, Col, Image, Row,} from "react-bootstrap";
 import Navigation from "../components/Navigation";
 import {observer} from "mobx-react-lite";
 import jwt_decode from "jwt-decode";

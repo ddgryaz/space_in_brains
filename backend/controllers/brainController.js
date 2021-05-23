@@ -9,7 +9,6 @@ class BrainController {
         try {
             let {name, description} = req.body
             if (description == '' || null) {
-                console.log(description)
                 description = oops
             }
             const {img} = req.files
