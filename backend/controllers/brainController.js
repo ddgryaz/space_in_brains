@@ -29,7 +29,7 @@ class BrainController {
         page = page || 1
         limit = limit || 12
         let offset = page * limit - limit
-        const brain = await Brain.findAndCountAll({limit, offset})
+        const brain = await Brain.findAndCountAll({limit, offset, order: ['id']})
         return res.json(brain)
 
     }
