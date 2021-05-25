@@ -18,6 +18,7 @@ class commentController {
             include: [{
                 model: User,
                 required: true,
+                attributes: ['login']
             }],
             order: [
                 ['id', 'DESC']
