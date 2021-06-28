@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Context} from "../index";
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
-import {ADMIN_ROUTE, LOGIN_ROUTE, PORTAL_ROUTE, SIB_ROUTE} from "../utils/consts";
+import {ADMIN_ROUTE, CHAT, LOGIN_ROUTE, PORTAL_ROUTE, SIB_ROUTE} from "../utils/consts";
 import {observer} from "mobx-react-lite";
 import {useHistory} from 'react-router-dom'
 import jwt_decode from "jwt-decode";
@@ -38,6 +38,7 @@ const NavBar = observer(() => {
                     {user.isAuth ?
                         <Nav className="ml-auto" style={{color: 'white'}}>
                             <Button style={{display: `${switchButton}`}} variant={"outline-light"} onClick={() => history.push(ADMIN_ROUTE)}>Админ панель</Button>
+                            <Button variant={"outline-light"} onClick={() => history.push(CHAT)} className={"ml-2"}><div style={{color: 'gold'}}>ЧАТ</div></Button>
                             <Button variant={"outline-light"} onClick={() => history.push(PORTAL_ROUTE)} className={"ml-2"}>Портал</Button>
                             <Button variant={"outline-light"} onClick={() => logOut()} className={"ml-2"} >Выйти</Button>
                         </Nav>
