@@ -13,6 +13,7 @@
 ![PERN](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200402205611/What-is-PERN-Stack.png)
 * NodeJS
   * Express
+  * WebSocket
 * ReactJS
   * MobX
   * Bootstrap Framework
@@ -32,16 +33,18 @@ Space in Brains представляет собой некий блокнот. �
 #### Backend:
 Создайте в корне .env файл по следующему шаблону: 
 ```
-PORT=
-DB_NAME=
-DB_USER=
-DB_PASSWORD=
-DB_HOST=
-DB_PORT=
-SECRET_KEY=
+PORT = 
+SOCKET_PORT = 
+DB_NAME = 
+DB_USER = 
+DB_PASSWORD = 
+DB_HOST = 
+DB_PORT = 
+SECRET_KEY = 
 ```
 #### Frontend:
 Создайте в корне .env файл по следующему шаблону:
 ```
-REACT_APP_API_URL= 
+REACT_APP_API_URL = 
+REACT_APP_SOCKET_URL = 
 ```
