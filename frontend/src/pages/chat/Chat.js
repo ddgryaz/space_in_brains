@@ -54,8 +54,13 @@ const Chat = observer(() => {
             event: 'message',
             avatar
         }
-        socket.current.send(JSON.stringify(message));
-        setValue('')
+        if (value.length < 1) {
+            // создай уже компонент модального окна-ошибки :)
+            alert('Нельзя отправлять пустое сообщение :(')
+        } else {
+            socket.current.send(JSON.stringify(message));
+            setValue('')
+        }
     }
 
     if (!connected) {
