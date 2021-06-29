@@ -9,3 +9,4 @@ backend/node_modules
 /pythonForDeploy/venv
 /pythonForDeploy/*.jpg
 /frontend/build
+/backend/chat.log
