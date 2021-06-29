@@ -4,6 +4,10 @@ const $host = axios.create({
     baseURL: process.env.REACT_APP_API_URL
 })
 
+const $github = axios.create({
+    baseURL: process.env.REACT_APP_GITHUB_URL
+})
+
 const $authHost = axios.create({
     baseURL: process.env.REACT_APP_API_URL
 })
@@ -16,6 +20,7 @@ const authInterceptor = config => {
 $authHost.interceptors.request.use(authInterceptor)
 
 export {
+    $github,
     $host,
     $authHost
 }

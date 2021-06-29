@@ -1,7 +1,7 @@
 import Admin from "./pages/Admin";
 import {
     ADMIN_ROUTE, ALL_BRAINS_ROUTE,
-    BRAIN_ROUTE, CHAT,
+    BRAIN_ROUTE, CHAT, CHANGELOG,
     LOGIN_ROUTE,
     PORTAL_ROUTE,
     PROFILE_ROUTE,
@@ -15,6 +15,7 @@ import Main from "./pages/main/Main";
 import Profile from "./pages/Profile";
 import AllBrains from "./pages/AllBrains";
 import Chat from "./pages/chat/Chat";
+import Changelog from "./pages/changelog/changelog";
 
 
 export const authRouters = [
@@ -48,6 +49,10 @@ export const publicRouters = [
     {
         path: SIB_ROUTE,
         Component: Main
+    },
+    {
+        path: CHANGELOG,
+        Component: Changelog
     },
     {
         path: LOGIN_ROUTE,
