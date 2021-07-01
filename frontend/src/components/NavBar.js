@@ -37,7 +37,7 @@ const NavBar = observer(() => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     {user.isAuth ?
                         <Nav className="ml-auto" style={{color: 'white'}}>
-                            <Button style={{display: `${switchButton}`}} variant={"outline-light"} onClick={() => history.push(ADMIN_ROUTE)}>Админ панель</Button>
+                            <Button style={{display: `${switchButton}`}} variant={"outline-light"} className={"ml-2"} onClick={() => history.push(ADMIN_ROUTE)}>Админ панель</Button>
                             <Button variant={"outline-light"} onClick={() => history.push(CHAT)} className={"ml-2"}><div style={{color: 'gold'}}>ЧАТ</div></Button>
                             <Button variant={"outline-light"} onClick={() => history.push(CHANGELOG)} className={"ml-2"}><div>Чейнджлог</div></Button>
                             <Button variant={"outline-light"} onClick={() => history.push(PORTAL_ROUTE)} className={"ml-2"}>Портал</Button>
