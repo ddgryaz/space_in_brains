@@ -2,7 +2,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import './chat.scss'
 import {observer} from "mobx-react-lite";
 import jwt_decode from "jwt-decode";
-import {Button, Image, Toast} from "react-bootstrap";
+import {Button, Form, Image, Toast} from "react-bootstrap";
+import {Avatar, Chip} from "@material-ui/core";
 
 const Chat = observer(() => {
     const userToken = localStorage.getItem('token')
@@ -70,22 +71,35 @@ const Chat = observer(() => {
             </div>
         )
     }
-
     return (
         <div className="center">
             <div>
-                <div className="form">
-                    <input value={value} onChange={e => setValue(e.target.value)} type="text" placeholder="Введите сообщение"/>
-                    <Button variant={"success"} onClick={sendMessage} className={"ml-2"}>Отправить</Button>
+                <div className="border">
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label className="white">Введите сообщение</Form.Label>
+                        <Form.Control type="text" placeholder="Message" value={value} onChange={e => setValue(e.target.value)}/>
+                        <Form.Text className="text-muted">
+                            Пустые сообщения отправлять нельзя
+                        </Form.Text>
+                    </Form.Group>
+                    <Button variant="primary" onClick={sendMessage}>
+                        Отправить
+                    </Button>
+                </Form>
                 </div>
-                <div className="messages">
+                <div>
                     {messages.map(mess =>
                         <div key={mess.id}>
                             {mess.event === 'connection'
-                                ? <div className="connection_message">
-                                    Пользователь {mess.username} подключился
-                                </div>
-                                : <div className="center"><Toast className="m-1">
+                                ? <div className="center"><Chip
+                                    avatar={<Avatar src={process.env.REACT_APP_API_URL + mess.avatar}></Avatar>}
+                                    label= {`Пользователь ${mess.username} подключился`}
+                                    clickable = {false}
+                                    color="primary"
+                                /></div>
+                                :
+                                <div className="center"><Toast className="m-auto">
                                     <Toast.Header closeButton={false}>
                                         <Image width={35} height={35} src={process.env.REACT_APP_API_URL + mess.avatar}/>
                                         <strong className="mr-auto">{mess.username}</strong>
