@@ -22,7 +22,7 @@ const App = observer(() => {
         return <Spinner animation={"grow"}/>
     }
     return (
-        <BrowserRouter>
+        <BrowserRouter forceRefresh={true}>
             <NavBar/>
             <AppRouter/>
         </BrowserRouter>
