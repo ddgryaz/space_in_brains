@@ -49,3 +49,7 @@ REACT_APP_API_URL =
 REACT_APP_SOCKET_URL = 
 REACT_APP_GITHUB_URL =
 ```
+
+### Демонстрация проекта:
+
+![working gif](spaceInBrainsDemo.gif)
