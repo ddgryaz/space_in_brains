@@ -12,13 +12,6 @@ const AllBrains = observer(() => {
     const {brain} = useContext(Context)
 
     useEffect(() => {
-        getBrains(1, 12).then(data => {
-            brain.setBrains(data.rows)
-            brain.setTotalCount(data.count)
-        })
-    }, [])
-
-    useEffect(() => {
         getBrains(brain.page, 12).then(data => {
             brain.setBrains(data.rows)
             brain.setTotalCount(data.count)
