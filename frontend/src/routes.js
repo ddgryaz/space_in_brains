@@ -6,7 +6,7 @@ import {
     PORTAL_ROUTE,
     PROFILE_ROUTE,
     REGISTRATION_ROUTE,
-    SIB_ROUTE
+    SIB_ROUTE, MOSTPOPULAR
 } from "./utils/consts";
 import Auth from "./pages/Auth";
 import Portal from "./pages/Portal";
@@ -16,6 +16,7 @@ import Profile from "./pages/Profile";
 import AllBrains from "./pages/AllBrains";
 import Chat from "./pages/chat/Chat";
 import Changelog from "./pages/changelog/changelog";
+import PopularityBrains from "./pages/PopularityBrains";
 
 
 export const authRouters = [
@@ -26,6 +27,10 @@ export const authRouters = [
     {
         path: PORTAL_ROUTE,
         Component: Portal
+    },
+    {
+        path: MOSTPOPULAR,
+        Component: PopularityBrains
     },
     {
         path: BRAIN_ROUTE + '/:id',
